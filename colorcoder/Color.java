@@ -1,3 +1,5 @@
+package colorcoder;
+
 public class Color {
   
   /**
