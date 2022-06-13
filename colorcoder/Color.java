@@ -1,13 +1,6 @@
 package colorcoder;
 
 public class Color {
-  
-  /**
-   * @author TAB1JA
-   * 
-   *
-   */
-  public enum Major {
     WHITE(0),
     RED(1),
     BLACK(2),
@@ -34,11 +27,11 @@ public class Color {
  *
  */
 public enum Minor {
-    BLUE(0),
-    ORANGE(1),
-    GREEN(2),
-    BROWN(3),
-    SLATE(4);
+    BLUE(5),
+    ORANGE(6),
+    GREEN(7),
+    BROWN(8),
+    SLATE(9);
     private int index;
     private Minor(int index) {
         this.index = index;
