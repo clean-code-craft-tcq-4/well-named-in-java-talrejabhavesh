@@ -1,6 +1,14 @@
 package colorcoder;
 
 public class Color {
+    
+  
+  /**
+   * @author TAB1JA
+   * 
+   *
+   */
+  public enum Major {
     WHITE(0),
     RED(1),
     BLACK(2),
