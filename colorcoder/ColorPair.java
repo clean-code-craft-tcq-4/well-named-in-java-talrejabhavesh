@@ -1,19 +1,23 @@
 package colorcoder;
 
 public class ColorPair {
-
-  private Color.Major major;
-  private Color.Minor minor;
-  final static String MajorNames[] = {
+  static final  String[]  MajorColors= {
       "White", "Red", "Black", "Yellow", "Violet"
   };
-  final static int numberOfMajors = MajorNames.length;
-  final static String MinorColorNames[] = {
+  static final  int NUMBER_OF_MAJOR_COLORS = MajorColors.length;
+  static final  String[]  MinorColors= {
       "Blue", "Orange", "Green", "Brown", "Slate"
   };
-  final static int numberOfMinorColors = MinorColorNames.length;
+  static final  int NUMBER_OF_MINOR_COLORS = MinorColors.length;
+  private Color.Major major;
+  private Color.Minor minor;
+
   
   
+  /**
+   * @param major
+   * @param minor
+   */
   public ColorPair(Color.Major major, Color.Minor minor)
   {
       this.major = major;
@@ -22,36 +26,53 @@ public class ColorPair {
   
   
   
+  /**
+   * @return
+   */
   public Color.Major getMajor() {
       return this.major;
   }
   
 
+  /**
+   * @return
+   */
   public Color.Minor getMinor() {
       return this.minor;
   }
   
   public String ToString() {
-      String colorPairStr = MajorNames[this.major.getIndex()];
+      String colorPairStr = MajorColors[this.major.getIndex()];
       colorPairStr += " ";
-      colorPairStr += MinorColorNames[this.minor.getIndex()];
+      colorPairStr += MinorColors[this.minor.getIndex()-5];
       return colorPairStr;
   }
   
   
-  public static ColorPair GetColorFromPairNumber(int pairNumber) {
+  /**
+   * @param pairNumber
+   * @return
+   */
+  public static ColorPair getColorFromPairNumber(int pairNumber) {
     int zeroBasedPairNumber = pairNumber - 1;
     Color.Major major = 
-        Color.Major.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
+        Color.Major.fromIndex(zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS);
     Color.Minor minor =
-        Color.Minor.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
+        Color.Minor.fromIndex((zeroBasedPairNumber % NUMBER_OF_MINOR_COLORS)+5);
+
     return new ColorPair(major, minor);
 }
   
   
-  public static int GetPairNumberFromColor(Color.Major major, Color.Minor minor) {
-    return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
+  /**
+   * @param major
+   * @param minor
+   * @return
+   */
+  public static int getPairNumberFromColor(Color.Major major, Color.Minor minor) {
+    return major.getIndex() * NUMBER_OF_MINOR_COLORS + minor.getIndex() -4;
 }
   
   
+
 }
