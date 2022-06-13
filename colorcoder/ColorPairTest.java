@@ -1,6 +1,5 @@
 package colorcoder;
 
-import static org.junit.Assert.*;
 
 public class ColorPairTest {
 
@@ -11,8 +10,8 @@ public class ColorPairTest {
   {
     ColorPair colorPair = ColorPair.GetColorFromPairNumber(pairNumber);
       System.out.println("Got pair " + colorPair.ToString());
-    assertEquals(expectedMajor,colorPair.getMajor());
-      assertEquals(expectedMinor,colorPair.getMinor());
+      assert(colorPair.getMajor() == expectedMajor);
+      assert(colorPair.getMinor() == expectedMinor);
   }
 
   public void testPairToNumber(
@@ -22,6 +21,6 @@ public class ColorPairTest {
   {
       int pairNumber = ColorPair.GetPairNumberFromColor(major, minor);
       System.out.println("Got pair number " + pairNumber);
-        assertEquals(expectedPairNumber,pairNumber);
+      assert(pairNumber == expectedPairNumber);
 }
 }
