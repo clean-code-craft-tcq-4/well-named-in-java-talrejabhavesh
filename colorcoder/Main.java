@@ -1,11 +1,15 @@
 package colorcoder;
 
+import colorcoder.Color.Major;
+import colorcoder.Color.Minor;
+
 public class Main {
+
    
   static void printColorManual() {
     int pairNumber=1;
-    for(Major majorColor: Major.values()) {
-      for(Minor minorColor: Minor.values()) {
+    for(Color.Major majorColor: Color.Major.values()) {
+      for(Color.Minor minorColor: Color.Minor.values()) {
         System.out.println("PAIR NO-"+pairNumber+"= ["+majorColor+","+minorColor+"]");
         pairNumber++;
       }
