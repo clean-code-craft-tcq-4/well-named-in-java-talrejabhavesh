@@ -4,6 +4,7 @@ public class Color {
     
   
   /**
+   * sample commit
    * @author TAB1JA
    * 
    *
@@ -31,6 +32,7 @@ public class Color {
     }
 };
 /**
+ * 
  * @author TAB1JA
  *
  */
@@ -57,4 +59,5 @@ public enum Minor {
     }
 };
   
+
 }
