@@ -31,6 +31,7 @@ public class Color {
     }
 };
 /**
+ * 
  * @author TAB1JA
  *
  */
@@ -57,4 +58,5 @@ public enum Minor {
     }
 };
   
+
 }
